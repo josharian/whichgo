@@ -19,5 +19,6 @@ func main() {
 	}
 	path = strings.TrimPrefix(path, "go-")
 	path = strings.TrimPrefix(path, "go.")
+	path = strings.TrimPrefix(path, "go")
 	fmt.Print("(", path, ")")
 }
