@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
 
 func main() {
-	if len(os.Args) <= 1 {
+	path, err := exec.LookPath("go")
+	if err != nil {
 		return
 	}
-	path := os.Args[1]
 	path = strings.TrimSuffix(path, "/bin/go")
 	path = filepath.Base(path)
 	if path == "go" {
